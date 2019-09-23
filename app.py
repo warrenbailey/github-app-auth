@@ -1,24 +1,18 @@
-#!/usr/bin/python
+from flask import Flask, request
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
+app = Flask(__name__)
 
-PORT_NUMBER = 8080
 
-class MyHandler(BaseHTTPRequestHandler):
+@app.route('/')
+def hello_world():
+    return 'Hello from Jenkins X deploy!'
 
-  def do_GET(self):
-    """Handler for GET requests"""
-    self.send_response(200)
-    self.send_header('Content-type','image/png')
-    self.end_headers()
-    with open('logo.png', 'rb') as f:
-      self.wfile.write(f.read())
 
-try:
-  server = HTTPServer(('', PORT_NUMBER), MyHandler)
-  print('Started httpserver on port', PORT_NUMBER)
-  server.serve_forever()
+@app.route("/callback")
+def callback():
+    print(request)
+    return "ok"
 
-except KeyboardInterrupt:
-  server.server_close()
-  print('Stopping server')
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=8080)
