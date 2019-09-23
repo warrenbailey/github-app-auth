@@ -15,13 +15,11 @@ def get_client_id_secret():
     config.load_kube_config()
     v1 = client.CoreV1Api()
     sec = str(v1.read_namespaced_secret("github-app", "jx-staging").data)
-    id = base64.b64decode(sec.strip().split()[1].translate(None, '}\''))
-    secret = base64.b64decode(sec.strip().split()[2].translate(None, '}\''))
-    logger.info(f"client_id {client_id}, client_secret {client_secret}")
-    return id, secret
+    c_id = base64.b64decode(sec.strip().split()[1].translate(None, '}\''))
+    c_secret = base64.b64decode(sec.strip().split()[2].translate(None, '}\''))
+    logger.info(f"client_id {c_id}, client_secret {c_secret}")
+    return c_id, c_secret
 
-
-client_id, client_secret = get_client_id_secret()
 
 
 @app.route('/')
@@ -39,6 +37,8 @@ def callback():
     installation_id = request.args['installation_id']
 
     logger.info(f"code {code}, setup_action {setup_action}, installation_id {installation_id}")
+
+    client_id, client_secret = get_client_id_secret()
 
     payload = {'code': code, 'client_id': client_id, 'client_secret': client_secret, 'state': 'octonauts', 'redirect_uri' : 'http://jenkins-x.io'}
 
