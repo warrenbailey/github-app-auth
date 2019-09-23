@@ -1,0 +1,134 @@
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-cskdh[0m
+{"level":"warn","ts":1569243494.302242,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569243494.3026552,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-xgj9q[0m
+{"level":"warn","ts":1569243495.2759998,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1569243495.2776725,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-warrenbailey-github-app-auth-pr-6xkj8[0m
+{"level":"warn","ts":1569243501.3541548,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569243501.6402824,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/warrenbailey/github-app-auth.git @ 54ef95957664b899e0b05d5c5a7e69cb568c7db1 in path /workspace/source"}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:879cda06fd93706acfda8598b9e09551fb72960c,3:54ef95957664b899e0b05d5c5a7e69cb568c7db1
+DEBUG: ran git fetch --unshallow origin 54ef95957664b899e0b05d5c5a7e69cb568c7db1: 879cda06fd93706acfda8598b9e09551fb72960c: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 879cda06fd93706acfda8598b9e09551fb72960c in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 54ef95957664b899e0b05d5c5a7e69cb568c7db1 in 
+Merged SHA 54ef95957664b899e0b05d5c5a7e69cb568c7db1 with commit message 'Bump werkzeug from 0.14.1 to 0.15.3' into base branch master
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0923 12:58:25.241959      10 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+ERROR: logging before flag.Parse: E0923 12:58:25.252125      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0923 12:58:25.254085      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/09/23 12:58:25 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/09/23 12:58:25 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Executing 3 build triggers                   
+[36mINFO[0m[0001] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/cb-aps-poc-consumer-wb2/cache:78f4f1bdea4c6fe3098f923ed66cee549b46f98b6217864dd7b2b6b1b917532d... 
+[36mINFO[0m[0002] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0015] Taking snapshot of full filesystem...        
+[36mINFO[0m[0025] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0025] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0025] Taking snapshot of files...                  
+[36mINFO[0m[0025] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0025] cmd: /bin/sh                                 
+[36mINFO[0m[0025] args: [-c pip install --no-cache-dir -r requirements.txt] 
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2==2.10 (from -r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting MarkupSafe==1.1.0 (from -r requirements.txt (line 5))
+  Downloading https://files.pythonhosted.org/packages/08/04/f2191b50fb7f0712f03f064b71d8b4605190f2178ba02e975a87f7b89a0d/MarkupSafe-1.1.0-cp36-cp36m-manylinux1_x86_64.whl
+Collecting Werkzeug==0.15.3 (from -r requirements.txt (line 6))
+  Downloading https://files.pythonhosted.org/packages/3d/bf/79101bd1d6a2b3fe0888e8d6e039800b173f26b7388308fc4bcc45de8d0a/Werkzeug-0.15.3-py2.py3-none-any.whl (327kB)
+Installing collected packages: Click, MarkupSafe, Jinja2, Werkzeug, itsdangerous, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.15.3 itsdangerous-1.1.0
+You are using pip version 10.0.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0027] Taking snapshot of full filesystem...        
+[36mINFO[0m[0030] Pushing layer gcr.io/cb-aps-poc-consumer-wb2/cache:78f4f1bdea4c6fe3098f923ed66cee549b46f98b6217864dd7b2b6b1b917532d to cache now 
+[36mINFO[0m[0030] Using files from context: [/workspace/source] 
+[36mINFO[0m[0030] COPY . /usr/src/app                          
+[36mINFO[0m[0031] Taking snapshot of files...                  
+[36mINFO[0m[0031] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0031] COPY requirements.txt .                      
+[36mINFO[0m[0031] Taking snapshot of files...                  
+[36mINFO[0m[0031] ENV PORT 8080                                
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] EXPOSE 8080                                  
+[36mINFO[0m[0031] cmd: EXPOSE                                  
+[36mINFO[0m[0031] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] CMD ["app.py"]                               
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+2019/09/23 12:58:57 pushed blob: sha256:b37251b099a2cbeb9b1342d95848562c58c369e8fd169d1dbdbe9c471841b893
+2019/09/23 12:58:58 pushed blob: sha256:cd09e500b55683937bc4cbf45c97d905b6cf2ef305d77dd66aab6b2fb0c2e7ec
+2019/09/23 12:58:58 gcr.io/cb-aps-poc-consumer-wb2/cache:78f4f1bdea4c6fe3098f923ed66cee549b46f98b6217864dd7b2b6b1b917532d: digest: sha256:bfb3d92cf01cdb1962df6b19e48e6341989519bfec37f79e8c2d51bb44fb71ea size: 428
+2019/09/23 12:58:58 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/09/23 12:58:58 existing blob: sha256:cd09e500b55683937bc4cbf45c97d905b6cf2ef305d77dd66aab6b2fb0c2e7ec
+2019/09/23 12:58:58 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/09/23 12:58:58 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/09/23 12:58:58 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/09/23 12:58:58 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/09/23 12:58:58 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/09/23 12:58:58 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/09/23 12:58:58 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/09/23 12:58:58 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/09/23 12:59:00 pushed blob: sha256:bdc1081dab281a8f98f377db1448dc40ffaa3dea9512b98917a7a5807a9f2334
+2019/09/23 12:59:00 pushed blob: sha256:6fcf66762b67f467823e9ca8019de10eb65b2acee01574de5b20093bfc42bdcf
+2019/09/23 12:59:00 pushed blob: sha256:99913ada3ffe1dcc87a423087a8c9f1ecc413a4156c282715f5ff85f747256e3
+2019/09/23 12:59:01 pushed blob: sha256:559c1864d8539156fb1f2fef4b629f766f7ed520af137ba926573f945f6ce3e5
+2019/09/23 12:59:01 gcr.io/cb-aps-poc-consumer-wb2/github-app-auth:0.0.0-SNAPSHOT-PR-3-1: digest: sha256:34c40bd04fba4615dd04500a51f73904e1f6c47dfc6ff55e0a494ecac226b82a size: 2385
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-3-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-3-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/cb-aps-poc-consumer-wb2\/github-app-auth|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-3-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-3-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-vw7f8-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Commit author email is empty for: 54ef95957664b899e0b05d5c5a7e69cb568c7db1
+Looking for commits in: /workspace/source/
+error: unable to parse requirement: invalid label value: "dependabot[bot]": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-preview'. The execution of the pipeline has stopped.[0m
