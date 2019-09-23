@@ -26,7 +26,6 @@ def get_client_id_secret():
     return c_id, c_secret
 
 
-
 @app.route('/')
 def hello_world():
     return 'Hello from Jenkins X deploy!'
@@ -45,7 +44,7 @@ def callback():
 
     client_id, client_secret = get_client_id_secret()
 
-    payload = {'code': code, 'client_id': client_id, 'client_secret': client_secret, 'state': 'octonauts', 'redirect_uri' : 'http://jenkins-x.io'}
+    payload = {'code': code, 'client_id': client_id, 'client_secret': client_secret, 'state': 'octonauts', 'redirect_uri' : 'http://github-app-auth.jx-staging.cb-aps-poc-consumer-wb2.jxaas.io/callback'}
 
     r = requests.post("https://github.com/login/oauth/access_token", data=payload)
 
