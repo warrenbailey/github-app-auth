@@ -1,7 +1,10 @@
 from flask import Flask, request
 
+import logging
+
 app = Flask(__name__)
 
+logger = logging.getLogger(__name__)
 
 @app.route('/')
 def hello_world():
@@ -10,7 +13,15 @@ def hello_world():
 
 @app.route("/callback")
 def callback():
-    print(request)
+    logger.info("callback called")
+    logger.info(f"request {request}")
+
+    code = request.args['code']
+    setup_action = request.args['setup_action']
+    installation_id = request.args['installation_id']
+
+    logger.info(f"code {code}, setup_action {setup_action}, installation_id {installation_id}")
+
     return "ok"
 
 
