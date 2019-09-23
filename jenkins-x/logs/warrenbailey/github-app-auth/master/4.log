@@ -1,0 +1,120 @@
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-4m5j5[0m
+{"level":"warn","ts":1569246018.14303,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569246018.143525,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-jr59d[0m
+{"level":"warn","ts":1569246019.1425512,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1569246019.144202,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/github-app-auth\""}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-warrenbailey-github-app-auth-ma-q8p8c[0m
+{"level":"warn","ts":1569246026.2282062,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569246026.5168154,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/warrenbailey/github-app-auth.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bbd7a5c5ffff1342b441fd9a23398d26061d04da
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0923 13:40:28.442488      10 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+ERROR: logging before flag.Parse: E0923 13:40:28.534179      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0923 13:40:28.634422      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/09/23 13:40:28 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/09/23 13:40:29 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 3 build triggers                   
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/cb-aps-poc-consumer-wb2/cache:67f05aae77f408156835279b1e8e98a8715a5488e27e19dfc1844f7ce855f5ab... 
+[36mINFO[0m[0002] Using caching version of cmd: RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0002] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0003] Using files from context: [/workspace/source] 
+[36mINFO[0m[0003] COPY . /usr/src/app                          
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0003] COPY requirements.txt .                      
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0003] ENV PORT 8080                                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] EXPOSE 8080                                  
+[36mINFO[0m[0003] cmd: EXPOSE                                  
+[36mINFO[0m[0003] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] CMD ["app.py"]                               
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+2019/09/23 13:40:31 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/09/23 13:40:31 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/09/23 13:40:31 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/09/23 13:40:31 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/09/23 13:40:31 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/09/23 13:40:31 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/09/23 13:40:31 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/09/23 13:40:31 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/09/23 13:40:31 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/09/23 13:40:32 pushed blob: sha256:2a4ba34897da93b05a28445ffefd84cbf42073950d6e194159b8822c13ea1350
+2019/09/23 13:40:32 pushed blob: sha256:35172bd1b6e8ee6969cce0e011d8de538b437f4dfdba5618026a62ac6b8be996
+2019/09/23 13:40:32 pushed blob: sha256:aa213ee141ba7aedf8d42f3708dc7b178d96df01b464ce833520e9db3cc4ecb8
+2019/09/23 13:40:33 pushed blob: sha256:20db95cc2ba00909f549ee95f634b05b8eae1504bd6befddd00358198e3d08e4
+2019/09/23 13:40:41 pushed blob: sha256:46196fd16eb02d51779b01bcf08ae34fe6be2d3ba59b05b7946b60f133fcddb9
+2019/09/23 13:40:41 gcr.io/cb-aps-poc-consumer-wb2/github-app-auth:0.0.3: digest: sha256:2865e574a2136ac663bd7c4369402356b5df327fe94d0aa49518233950708d53 size: 2385
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/github-app-auth to an unshallow repository
+Generating change log from git ref f665f6c66cd9069856db595e8219e4e7150f5b54 => 69e8814d55ca9fc1b51edc684a4deb82a1b16a80
+WARNING: Failed to enrich commit 61795f21c8a9469e91828839d71e797760feca94 with issues: selected more than one user from users.jenkins.io: [warrenbailey warrenbailey-0]
+WARNING: Failed to enrich commit 61795f21c8a9469e91828839d71e797760feca94 with issues: selected more than one user from users.jenkins.io: [warrenbailey warrenbailey-0]
+Finding issues in commit messages using git format
+WARNING: No release found for warrenbailey/github-app-auth and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/warrenbailey/github-app-auth/releases/tag/v0.0.3
+generated: /workspace/source/charts/github-app-auth/templates/release.yaml
+Created Release github-app-auth-0-0-3 resource in namespace **
+Updating PipelineActivity warrenbailey-github-app-auth-master-4 with version 0.0.3
+Updated PipelineActivities warrenbailey-github-app-auth-master-4 with release notes URL: https://github.com/warrenbailey/github-app-auth/releases/tag/v0.0.3
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file github-app-auth-0.0.3.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-ma-hffbt-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app github-app-auth version 0.0.3 to namespace **-staging
+Created Pull Request: https://github.com/warrenbailey-org/environment-**-aps-consumer-wb2-staging/pull/3
+Pull Request https://github.com/warrenbailey-org/environment-**-aps-consumer-wb2-staging/pull/3 is merged at sha 621d7f06084f0f9c2f468aa33af7340319bf007e
+Pull Request merged but we are not waiting for the update pipeline to complete!
