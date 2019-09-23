@@ -4,7 +4,9 @@ import logging
 
 app = Flask(__name__)
 
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
 
 @app.route('/')
 def hello_world():
@@ -22,7 +24,7 @@ def callback():
 
     logger.info(f"code {code}, setup_action {setup_action}, installation_id {installation_id}")
 
-    return "ok"
+    return f"ok {code} {setup_action} {installation_id}"
 
 
 if __name__ == '__main__':
