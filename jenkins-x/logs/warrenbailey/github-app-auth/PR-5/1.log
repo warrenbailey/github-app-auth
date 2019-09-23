@@ -1,0 +1,149 @@
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-sdr7x[0m
+{"level":"warn","ts":1569245547.3834014,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569245547.384026,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-5jv78[0m
+{"level":"warn","ts":1569245548.401238,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1569245548.4026475,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-warrenbailey-github-app-auth-pr-nc8hb[0m
+{"level":"warn","ts":1569245554.4740124,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569245554.7776334,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/warrenbailey/github-app-auth.git @ 61795f21c8a9469e91828839d71e797760feca94 in path /workspace/source"}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bc14bc9075a614f2a16992d9854050cd43e1cd86,5:61795f21c8a9469e91828839d71e797760feca94
+DEBUG: ran git fetch --unshallow origin 61795f21c8a9469e91828839d71e797760feca94: bc14bc9075a614f2a16992d9854050cd43e1cd86: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard bc14bc9075a614f2a16992d9854050cd43e1cd86 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 61795f21c8a9469e91828839d71e797760feca94 in 
+Merged SHA bf93e26b1d50fe6279637ec8dc1a4e010ccb8cc9 with commit message 'Merge commit '61795f21c8a9469e91828839d71e797760feca94'' into base branch master
+Merged SHA 61795f21c8a9469e91828839d71e797760feca94 with commit message 'Logging setup' into base branch master
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0923 13:32:37.551348      10 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+ERROR: logging before flag.Parse: E0923 13:32:37.559528      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0923 13:32:37.634375      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/09/23 13:32:37 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/09/23 13:32:38 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Executing 3 build triggers                   
+[36mINFO[0m[0001] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/cb-aps-poc-consumer-wb2/cache:67f05aae77f408156835279b1e8e98a8715a5488e27e19dfc1844f7ce855f5ab... 
+[36mINFO[0m[0001] Using caching version of cmd: RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0001] Using files from context: [/workspace/source] 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0001] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0001] Taking snapshot of files...                  
+[36mINFO[0m[0001] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0001] Found cached layer, extracting to filesystem 
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . /usr/src/app                          
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] COPY requirements.txt .                      
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] CMD ["app.py"]                               
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+2019/09/23 13:32:39 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/09/23 13:32:39 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/09/23 13:32:39 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/09/23 13:32:39 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/09/23 13:32:39 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/09/23 13:32:39 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/09/23 13:32:39 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/09/23 13:32:39 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/09/23 13:32:39 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/09/23 13:32:41 pushed blob: sha256:1de22e43eeea4775096133ad4888e2f024cb85282e2a01673eacbaa5d039180b
+2019/09/23 13:32:41 pushed blob: sha256:b7bce13a467c5b9e36ca2f7c06f19012301c7f3033aab65cb5fcf91a89965e39
+2019/09/23 13:32:41 pushed blob: sha256:e644a93f21e452e11b5e50ee58d68c567596c1b730238bb095c29b935a1ccbf7
+2019/09/23 13:32:41 pushed blob: sha256:152459ee2e1e56f33b143629d8058a875515b46b39496818ac493be879802741
+2019/09/23 13:32:42 pushed blob: sha256:d757a99eae7afc94f05eb7ee79a876dc63b865d6e05ca34f448ce2fbc7b97ec5
+2019/09/23 13:32:42 gcr.io/cb-aps-poc-consumer-wb2/github-app-auth:0.0.0-SNAPSHOT-PR-5-1: digest: sha256:84b6ffcd4b6f7a2ee4f8bb9e55d81c7020bc0cce840fbae12fa562b9f852f9e6 size: 2385
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-5-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-5-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/cb-aps-poc-consumer-wb2\/github-app-auth|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-5-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-5-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-dctjm-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Commit author email is empty for: 61795f21c8a9469e91828839d71e797760feca94
+Looking for commits in: /workspace/source/
+Found commit author match for: warrenbailey with email address: warren@warrenbailey.net
+Created environment warrenbailey-github-app-auth-pr-5
+Namespace **-warrenbailey-github-app-auth-pr-5 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: cb-aps-poc-consumer-wb2.**aas.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/cb-aps-poc-consumer-wb2/github-app-auth
+    tag: 0.0.0-SNAPSHOT-PR-5-1
+Deleting and cloning the Jenkins X versions repo
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+
+Updating PipelineActivities warrenbailey-github-app-auth-pr-5-1 which has status Running
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 502.843041ms
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 1.010483767s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 1.646617594s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 4.920594459s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 2.916963202s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 8.631392s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 7.616679347s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 23.042657797s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 35.887520474s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 47.192193615s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 1m5.122956113s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 1m27.361237596s
+WARNING: preview application http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io not available, error was Get http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io: dial tcp: lookup github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io on 10.19.240.10:53: no such host, delaying for: 1m17.500338545s
+Preview application is now available at: http://github-app-auth.**-warrenbailey-github-app-auth-pr-5.cb-aps-poc-consumer-wb2.**aas.io
