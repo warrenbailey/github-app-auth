@@ -15,8 +15,13 @@ def get_client_id_secret():
     config.load_incluster_config()
     v1 = client.CoreV1Api()
     sec = str(v1.read_namespaced_secret("github-app", "jx-staging").data)
-    c_id = base64.b64decode(sec.strip().split()[1].translate(None, '}\''))
-    c_secret = base64.b64decode(sec.strip().split()[2].translate(None, '}\''))
+
+    v1_secret = v1.read_namespaced_secret("github-app", "jx-staging")
+    logger.info(f"secret {v1_secret}")
+    data = v1_secret.data
+    logger.info(f"data {data}")
+    c_id = base64.b64decode(data['client_id'])
+    c_secret = base64.b64decode(data['client_secret'])
     logger.info(f"client_id {c_id}, client_secret {c_secret}")
     return c_id, c_secret
 
