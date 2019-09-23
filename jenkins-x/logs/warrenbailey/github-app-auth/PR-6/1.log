@@ -1,0 +1,75 @@
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-rpdnv[0m
+{"level":"warn","ts":1569251824.2037053,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569251824.2042444,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-xcwpn[0m
+{"level":"warn","ts":1569251824.6637678,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1569251824.6666043,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/preview\""}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-warrenbailey-github-app-auth-pr-7v2l4[0m
+{"level":"warn","ts":1569251830.7617385,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1569251831.0410473,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/warrenbailey/github-app-auth.git @ 3795c64806940c7f971e6a28d7114f4e7603ba8f in path /workspace/source"}
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bbd7a5c5ffff1342b441fd9a23398d26061d04da,6:3795c64806940c7f971e6a28d7114f4e7603ba8f
+DEBUG: ran git fetch --unshallow origin 3795c64806940c7f971e6a28d7114f4e7603ba8f: bbd7a5c5ffff1342b441fd9a23398d26061d04da: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard bbd7a5c5ffff1342b441fd9a23398d26061d04da in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 3795c64806940c7f971e6a28d7114f4e7603ba8f in 
+Merged SHA 4275971a6c048925b45c0c39b49379e65e83876c with commit message 'Merge commit '3795c64806940c7f971e6a28d7114f4e7603ba8f'' into base branch master
+Merged SHA 3795c64806940c7f971e6a28d7114f4e7603ba8f with commit message 'Read client id and secret from kubernetes secret' into base branch master
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mwarrenbailey-github-app-auth-pr-mfjqr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0923 15:17:13.749013      10 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+ERROR: logging before flag.Parse: E0923 15:17:13.834220      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0923 15:17:13.836176      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/09/23 15:17:13 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/09/23 15:17:14 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Executing 3 build triggers                   
+[36mINFO[0m[0001] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0001] Checking for cached layer gcr.io/cb-aps-poc-consumer-wb2/cache:b6e6cbccaab70711d252b506b4824dbecab1d0ef33099a26217e4aab0ba8428f... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0014] Taking snapshot of full filesystem...        
+[36mINFO[0m[0023] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0023] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0023] cmd: /bin/sh                                 
+[36mINFO[0m[0023] args: [-c pip install --no-cache-dir -r requirements.txt] 
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2==2.10 (from -r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting MarkupSafe==1.1.0 (from -r requirements.txt (line 5))
+  Downloading https://files.pythonhosted.org/packages/08/04/f2191b50fb7f0712f03f064b71d8b4605190f2178ba02e975a87f7b89a0d/MarkupSafe-1.1.0-cp36-cp36m-manylinux1_x86_64.whl
+Collecting Werkzeug==0.14.1 (from -r requirements.txt (line 6))
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
+Collecting requests==2.22.0 (from -r requirements.txt (line 7))
+  Downloading https://files.pythonhosted.org/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57kB)
+Collecting kubernetes-10.0.1 (from -r requirements.txt (line 8))
+  Could not find a version that satisfies the requirement kubernetes-10.0.1 (from -r requirements.txt (line 8)) (from versions: )
+No matching distribution found for kubernetes-10.0.1 (from -r requirements.txt (line 8))
+You are using pip version 10.0.1, however version 19.2.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+error building image: error building stage: waiting for process to exit: exit status 1
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
