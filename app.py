@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_client_id_secret():
-    config.load_kube_config()
+    config.load_incluster_config()
     v1 = client.CoreV1Api()
     sec = str(v1.read_namespaced_secret("github-app", "jx-staging").data)
     c_id = base64.b64decode(sec.strip().split()[1].translate(None, '}\''))
